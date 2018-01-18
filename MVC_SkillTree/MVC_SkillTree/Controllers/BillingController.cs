@@ -7,6 +7,7 @@ namespace MVC_SkillTree.Controllers
 {
     public class BillingController : Controller
     {
+        [ChildActionOnly]
         public ActionResult ListBillingRecords()
         {
             var records = GenerateBillingRecords();
