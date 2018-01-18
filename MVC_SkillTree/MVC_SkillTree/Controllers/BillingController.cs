@@ -4,7 +4,7 @@ namespace MVC_SkillTree.Controllers
 {
     public class BillingController : Controller
     {
-        public ActionResult List()
+        public ActionResult ListBillingRecords()
         {
             return View();
         }
