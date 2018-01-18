@@ -9,7 +9,7 @@ namespace MVC_SkillTree.ViewModels
     public class BillingRecordViewModel
     {
         [DisplayFormat(DataFormatString = "{0:N0}")]
-        public int Amount { get; set; }
+        public decimal Amount { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime Date { get; set; }
