@@ -21,9 +21,9 @@
             {
                 <tr>
                     <td>@(i++)</td>
-                    <td>@record.Type</td>
-                    <td>@record.Date</td>
-                    <td>@record.Amount</td>
+                    <td>@Html.DisplayFor(model => record.Type)</td>
+                    <td>@Html.DisplayFor(model => record.Date)</td>
+                    <td>@Html.DisplayFor(model => record.Amount)</td>
                 </tr>
             }
           

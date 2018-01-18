@@ -19,7 +19,7 @@ namespace MVC_SkillTree.Controllers
             var random = new Random();
             for (int index = 0; index < 100; index++)
             {
-                var type = index % 2 == 0 ? BillingType.Expenses : BillingType.Revenue;
+                var type = index % 2 == 0 ? BillingType.支出 : BillingType.收入;
                 var record = new BillingRecordViewModel
                 {
                     Type = type,
