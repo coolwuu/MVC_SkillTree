@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2020
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_SkillTree", "MVC_SkillTree\MVC_SkillTree.csproj", "{644F055D-4745-47C2-B35D-E83B090D5BFB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{644F055D-4745-47C2-B35D-E83B090D5BFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{644F055D-4745-47C2-B35D-E83B090D5BFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{644F055D-4745-47C2-B35D-E83B090D5BFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{644F055D-4745-47C2-B35D-E83B090D5BFB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {37094C26-E8DA-4113-B2B1-DF4472F6D27F}
+	EndGlobalSection
+EndGlobal
