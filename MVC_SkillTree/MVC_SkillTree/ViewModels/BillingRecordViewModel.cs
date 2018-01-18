@@ -16,7 +16,7 @@ namespace MVC_SkillTree.ViewModels
 
     public enum BillingType
     {
-        Revenue,
-        Expenses
+        收入,
+        支出
     }
 }
