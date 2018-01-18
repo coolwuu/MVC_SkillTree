@@ -11,8 +11,6 @@ namespace MVC_SkillTree.ViewModels
 
         public DateTime Date { get; set; }
 
-        public string Remark { get; set; }
-
         public BillingType Type { get; set; }
     }
 
