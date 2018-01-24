@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using MVC_SkillTree.Models;
+using MVC_SkillTree.Repositories;
 using MVC_SkillTree.ViewModels;
 
 namespace MVC_SkillTree.Controllers
@@ -12,7 +13,8 @@ namespace MVC_SkillTree.Controllers
         private readonly BillingService _billingService;
         public BillingController()
         {
-            _billingService = new BillingService();
+            var unitOfWork = new EFUnitOfWork();
+            _billingService = new BillingService(unitOfWork);
         }
 
         [ChildActionOnly]

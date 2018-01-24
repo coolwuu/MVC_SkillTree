@@ -11,16 +11,16 @@ namespace MVC_SkillTree.Repositories
     {
         public IUnitOfWork UnitOfWork { get; set; }
 
-        private DbSet<T> _Objectset;
+        private DbSet<T> _objectset;
         private DbSet<T> ObjectSet
         {
             get
             {
-                if (_Objectset == null)
+                if (_objectset == null)
                 {
-                    _Objectset = UnitOfWork.Context.Set<T>();
+                    _objectset = UnitOfWork.Context.Set<T>();
                 }
-                return _Objectset;
+                return _objectset;
             }
         }
         public Repository(IUnitOfWork unitOfWork)
