@@ -9,21 +9,16 @@ namespace MVC_SkillTree.Controllers
 {
     public class BillingController : Controller
     {
-        private readonly SkillTreeHomeWorkDb _dbcontext;
+        private readonly BillingService _billingService;
         public BillingController()
         {
-            _dbcontext = new SkillTreeHomeWorkDb();
+            _billingService = new BillingService();
         }
 
         [ChildActionOnly]
         public ActionResult ListBillingRecords()
         {
-            var records = _dbcontext.AccountBooks.Take(100).Select(x => new BillingRecordViewModel
-            {
-                Amount = x.Amounttt,
-                Date = x.Dateee,
-                Type = x.Categoryyy == 1 ? BillingType.支出 : BillingType.收入
-            }).ToList();
+            var records = _billingService.GetTop100BillingRecords();   
             return View(records);
         }
     }

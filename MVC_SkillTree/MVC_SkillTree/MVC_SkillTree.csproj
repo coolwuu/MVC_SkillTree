@@ -156,6 +156,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountBook.cs" />
+    <Compile Include="Models\BillingService.cs" />
     <Compile Include="Models\SkillTreeHomeWorkDb.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\BillingRecordViewModel.cs" />
