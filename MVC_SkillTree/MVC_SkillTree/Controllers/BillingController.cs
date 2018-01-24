@@ -1,36 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
+using MVC_SkillTree.Models;
 using MVC_SkillTree.ViewModels;
 
 namespace MVC_SkillTree.Controllers
 {
     public class BillingController : Controller
     {
+        private readonly SkillTreeHomeWorkDb _dbcontext;
+        public BillingController()
+        {
+            _dbcontext = new SkillTreeHomeWorkDb();
+        }
+
         [ChildActionOnly]
         public ActionResult ListBillingRecords()
         {
-            var records = GenerateBillingRecords();
-            return View(records);
-        }
-
-        private IEnumerable<BillingRecordViewModel> GenerateBillingRecords()
-        {
-            var billingRecords = new List<BillingRecordViewModel>();
-            var random = new Random();
-            for (int index = 0; index < 100; index++)
+            var records = _dbcontext.AccountBooks.Take(100).Select(x => new BillingRecordViewModel
             {
-                var type = index % 2 == 0 ? BillingType.支出 : BillingType.收入;
-                var record = new BillingRecordViewModel
-                {
-                    Type = type,
-                    Amount = random.Next(9999),
-                    Date = new DateTime(2017, 1, 1).AddDays(random.Next(366)),
-                };
-
-                billingRecords.Add(record);
-            }
-            return billingRecords;
+                Amount = x.Amounttt,
+                Date = x.Dateee,
+                Type = x.Categoryyy == 1 ? BillingType.支出 : BillingType.收入
+            }).ToList();
+            return View(records);
         }
     }
 }
