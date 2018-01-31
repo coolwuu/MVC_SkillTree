@@ -22,7 +22,7 @@ namespace MVC_SkillTree.Models
         public IEnumerable<BillingRecordViewModel> GetBillingRecords(int row)
         {
             var source = _accountBookRep.LookupAll();
-            var result = source.Take(row).Select(x => new BillingRecordViewModel
+            var result = source.OrderByDescending(r =>r.Dateee).Take(row).Select(x => new BillingRecordViewModel
             {
                 Amount = x.Amounttt,
                 Date = x.Dateee,
