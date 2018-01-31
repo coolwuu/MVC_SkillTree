@@ -1,5 +1,5 @@
 ﻿@model System.Collections.Generic.IEnumerable<MVC_SkillTree.ViewModels.BillingRecordViewModel>
-
+@using MVC_SkillTree.Helper
 @{
 
     Layout = "";
@@ -21,7 +21,7 @@
             {
                 <tr>
                     <td>@(i++)</td>
-                    <td>@Html.DisplayFor(model => record.Type)</td>
+                    <td>@Html.AddColorByCategory(record)</td>
                     <td>@Html.DisplayFor(model => record.Date)</td>
                     <td>@Html.DisplayFor(model => record.Amount)</td>
                 </tr>

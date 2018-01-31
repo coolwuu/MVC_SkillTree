@@ -155,6 +155,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper\FontColorHelper.cs" />
     <Compile Include="Models\AccountBook.cs" />
     <Compile Include="Models\BillingService.cs" />
     <Compile Include="Models\SkillTreeHomeWorkDb.cs" />
