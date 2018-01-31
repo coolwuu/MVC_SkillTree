@@ -23,5 +23,10 @@ namespace MVC_SkillTree.Controllers
             var records = _billingService.GetBillingRecords(100);   
             return View(records);
         }
+
+        public ActionResult AddRecord(AccountBook record)
+        {
+            return RedirectToAction("index", "Home");
+        }
     }
 }

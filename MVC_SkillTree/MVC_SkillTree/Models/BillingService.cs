@@ -26,7 +26,7 @@ namespace MVC_SkillTree.Models
             {
                 Amount = x.Amount,
                 Date = x.Date,
-                Type = x.Category == 1 ? BillingType.支出 : BillingType.收入
+                Type = x.Category // == (int)BillingType.支出 ? BillingType.支出 : BillingType.收入
             }).ToList();
             return result;
         }
