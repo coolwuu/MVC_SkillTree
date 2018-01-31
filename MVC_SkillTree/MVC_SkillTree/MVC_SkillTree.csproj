@@ -163,6 +163,7 @@
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\IUnitOfWork.cs" />
     <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="ValidationAttribute\IsExistDateTimeAttribute.cs" />
     <Compile Include="ViewModels\BillingRecordViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
