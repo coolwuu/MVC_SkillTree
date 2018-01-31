@@ -1,20 +1,30 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Web.Mvc;
 
 namespace MVC_SkillTree.ValidationAttribute
 {
-    public class IsExistDateTimeAttribute : System.ComponentModel.DataAnnotations.ValidationAttribute
+    public sealed class IsExistDateTimeAttribute : System.ComponentModel.DataAnnotations.ValidationAttribute, IClientValidatable
     {
+        private DateTime InputDateTime { get; set; }
         public override bool IsValid(object value)
         {
-            DateTime dateTime;
-            var isValid = DateTime.TryParseExact(Convert.ToString(value),
-                "yyyy-MM-dd",
-                CultureInfo.CurrentCulture,
-                DateTimeStyles.None,
-                out dateTime);
+            InputDateTime = Convert.ToDateTime(value);
+            DateTime d = Convert.ToDateTime(value);
+            return d.Date <= DateTime.Now;
+        }
 
-            return (isValid && dateTime > DateTime.Today);
+        public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)
+        {
+            ModelClientValidationRule rule = new ModelClientValidationRule
+            {
+                ValidationType = "isexistdatetime",
+                ErrorMessage = FormatErrorMessage(metadata.GetDisplayName())
+            };
+            rule.ValidationParameters["input"] = InputDateTime;
+
+            yield return rule;
         }
     }
 }

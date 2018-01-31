@@ -35,5 +35,10 @@ namespace MVC_SkillTree.Models
         {
             _unitOfWork.Save();
         }
+
+        public void AddRecord(AccountBook record)
+        {
+            _accountBookRep.Create(record);
+        }
     }
 }
