@@ -9,14 +9,14 @@ namespace MVC_SkillTree.Models
     {
         public Guid Id { get; set; }
 
-        public int Categoryyy { get; set; }
+        public int Category { get; set; }
 
-        public int Amounttt { get; set; }
+        public int Amount { get; set; }
 
-        public DateTime Dateee { get; set; }
+        public DateTime Date { get; set; }
 
         [Required]
         [StringLength(500)]
-        public string Remarkkk { get; set; }
+        public string Remark { get; set; }
     }
 }

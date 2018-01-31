@@ -22,11 +22,11 @@ namespace MVC_SkillTree.Models
         public IEnumerable<BillingRecordViewModel> GetBillingRecords(int row)
         {
             var source = _accountBookRep.LookupAll();
-            var result = source.OrderByDescending(r =>r.Dateee).Take(row).Select(x => new BillingRecordViewModel
+            var result = source.OrderByDescending(r =>r.Date).Take(row).Select(x => new BillingRecordViewModel
             {
-                Amount = x.Amounttt,
-                Date = x.Dateee,
-                Type = x.Categoryyy == 1 ? BillingType.支出 : BillingType.收入
+                Amount = x.Amount,
+                Date = x.Date,
+                Type = x.Category == 1 ? BillingType.支出 : BillingType.收入
             }).ToList();
             return result;
         }
