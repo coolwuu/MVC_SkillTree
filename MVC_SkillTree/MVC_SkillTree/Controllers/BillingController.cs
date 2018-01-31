@@ -20,7 +20,7 @@ namespace MVC_SkillTree.Controllers
         [ChildActionOnly]
         public ActionResult ListBillingRecords()
         {
-            var records = _billingService.GetTop100BillingRecords();   
+            var records = _billingService.GetBillingRecords(100);   
             return View(records);
         }
     }

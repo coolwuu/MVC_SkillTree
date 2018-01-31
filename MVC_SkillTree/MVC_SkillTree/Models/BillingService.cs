@@ -19,10 +19,10 @@ namespace MVC_SkillTree.Models
             _accountBookRep = new Repository<AccountBook>(_unitOfWork);
         }
 
-        public IEnumerable<BillingRecordViewModel> GetTop100BillingRecords()
+        public IEnumerable<BillingRecordViewModel> GetBillingRecords(int row)
         {
             var source = _accountBookRep.LookupAll();
-            var result = source.Take(100).Select(x => new BillingRecordViewModel
+            var result = source.Take(row).Select(x => new BillingRecordViewModel
             {
                 Amount = x.Amounttt,
                 Date = x.Dateee,
