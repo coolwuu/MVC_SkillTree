@@ -33,7 +33,8 @@ namespace MVC_SkillTree.Controllers
                 _billingService.AddRecord(record);
                 _billingService.Save();
             }
-            return RedirectToAction("Index", "Home");
+            var records = _billingService.GetBillingRecords(10);
+            return View("ListBillingRecords",records);
         }
     }
 }

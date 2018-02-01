@@ -5,7 +5,7 @@
 }
 <div class="container body-content">
     <div class="well">
-        @using (Html.BeginForm("AddRecord", "Billing", FormMethod.Post, new { @class = "form-horizontal" }))
+        @using (Ajax.BeginForm("AddRecord", "Billing",null,new AjaxOptions{UpdateTargetId = "ajaxList"}, new { @class = "form-horizontal" }))
         {
             <div class="form-group">
                 @Html.LabelFor(m => m.Category, new { @class = "col-sm-2 control-label" })
@@ -46,6 +46,7 @@
 @Html.Action("ListBillingRecords", "Billing")
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryAjax")
 
     <script type="text/javascript">
         $.validator.addMethod("isexistdatetime",
@@ -53,8 +54,11 @@
                 if (value === false) {
                     return true;
                 }
+                
                 var inputDate = value;
-                var today = new Date().toJSON().slice(0, 10).replace(/-/g, '/');
+                var today = TodayDate();
+                console.log(today);
+                console.log(inputDate <= today);
                 if (inputDate <= today) {
                     return true;
                 } else {
@@ -62,5 +66,23 @@
                 }
             });
         $.validator.unobtrusive.adapters.addSingleVal("isexistdatetime", "input");
+
+        function TodayDate() {
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth()+1; //January is 0!
+            var yyyy = today.getFullYear();
+
+            if(dd<10) {
+                dd = '0'+dd
+            } 
+
+            if(mm<10) {
+                mm = '0'+mm
+            } 
+
+            today = yyyy + '-' + mm + '-' + dd;
+            return today;
+        }
     </script>
 }
