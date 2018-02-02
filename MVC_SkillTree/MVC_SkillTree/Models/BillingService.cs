@@ -36,7 +36,7 @@ namespace MVC_SkillTree.Models
             _unitOfWork.Save();
         }
 
-        public void AddRecord(AccountBook record)
+        public void AddNewRecord(AccountBook record)
         {
             _accountBookRep.Create(record);
         }

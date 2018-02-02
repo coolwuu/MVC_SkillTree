@@ -30,7 +30,7 @@ namespace MVC_SkillTree.Controllers
             if (ModelState.IsValid)
             {
                 record.Id = Guid.NewGuid();
-                _billingService.AddRecord(record);
+                _billingService.AddNewRecord(record);
                 _billingService.Save();
             }
             var records = _billingService.GetBillingRecords(10);
